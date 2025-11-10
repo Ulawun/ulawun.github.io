@@ -1,22 +1,145 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="google" value="notranslate">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<title>Ulawun</title>
+<script>
 
-  <head>
-    <meta charset='utf-8' />
-    <title>Ulawun2</title>
-  </head>
-  <body>
+// version: 251110
 
-<h1>Hello World2 :-)</h1>
+const liam = 'ten.xmg@nuwalu'
 
-<iframe width="100%"
-src="http://ulawun.github.io/images/icon_download.png"></iframe>
+function crunch(str) {
+	let res = ''
+	for (var i = str.length-1; i >= 0; i --) {
+		res += str.charAt(i)
+	}
+	return res
+}
 
-<iframe width="100%"
-src="http://ulawun.github.io/content.txt"></iframe>
+function otliam() {
+	if (liam !== '') document.write('<a href="' +
+		crunch('otliam') + ':' +
+		crunch(liam) + '">' +
+		crunch(liam) + '</a>'
+	)
+}
 
-<iframe width="100%" height="512"
-src="http://algo.bplaced.net/r/"></iframe>
+function phone() {
+	const x = "8577305 361 94+"
+	document.write('<a href="tel:' +
+		crunch(x) + '">' +
+		crunch(x) + '</a>'
+	)
+}
 
-  </body>
+window.onscroll = function() {
+	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+	var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+	var scrollPercent = (100 * scrollTop) / scrollHeight
+	document.getElementById("progress").style.width = scrollPercent + "%"
+}
+
+</script>
+<style type="text/css">
+
+:focus { outline: 0 }
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active,
+a:focus { color: blue }
+a:hover { color: #d00 }
+
+body {
+	position: relative; /* needed for footer positioning*/
+	margin: 0 auto; /* center, not in IE5 */
+	height: auto !important; /* real browsers */
+	height: 100%; /* IE6: treaded as min-height*/
+	min-height: 100%; /* real browsers */
+	font: 16px arial;
+	background: #eee;
+}
+
+b { font-weight: bold }
+i { font-style: italic }
+u { text-decoration: underline }
+h1 { font-size: 32px; font-weight: bold; background: white; text-align: center; padding: 8px 0 }
+h2 { font-size: 22px; font-weight: bold; background: white; text-align: center; margin-top: 12px; padding-right: 4px }
+h3 { font-size: 18px; font-weight: bold; background: white; text-align: center; padding: 2px 0 }
+td { text-align: left; vertical-align: top }
+
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: blue;
+    z-index: 1000;
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="progress"></div>
+
+<a href="javascript:scrollTo(0,0)">
+<div style="position:fixed;top:0;right:0;width:64px;height:64px"></div>
+</a>
+
+<div><img src="sunset.jpg" style="width:100%;height:192px" /></div>
+
+<center>
+<div style="width:183px;margin-top:-144px;text-align:left">
+
+	<h1>
+		<img src="1.jpg"><img src="2.jpg"><img src="3.jpg">
+		UI<script>document.write(crunch('cir'))</script>h
+	</h1>
+
+	<h2>Phone</h2>
+	<h3><script>phone()</script></h3>
+
+	<h2>Mail</h2>
+	<h3><script>otliam()</script></h3>
+	<img src="qr/mailto.png" style="width:183px" />
+
+	<h2>Signal</h2>
+	<h3 style="color:blue">Ulawun</h3>
+	<img src="qr/signal.png" style="width:183px" />
+
+	<h2>Telegram</h2>
+	<a target="_blank" href="https://t.me/Ulawun">
+		<h3>Ulawun</h3>
+		<img src="qr/telegram.jpg" style="width:183px" />
+	</a>
+
+	<h2>This Onepager</h2>
+	<a href="https://ulawun.github.io/">
+		<h3>ulawun.github.io</h3>
+		<img src="qr/website.png" style="width:183px" /></a>
+
+</div>
+</center>
+
+<div>&nbsp;</div>
+
+</body>
 </html>
