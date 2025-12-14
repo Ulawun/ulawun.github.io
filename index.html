@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="google" value="notranslate">
 <meta name="HandheldFriendly" content="true">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <title>Ulawun</title>
 <script>
 
-// version: 251110
+// version: 251214
 
 const liam = 'ten.xmg@nuwalu'
 
@@ -56,6 +56,7 @@ window.onscroll = function() {
 	border: 0;
 	border-spacing: 0;
 	border-collapse: collapse;
+	box-sizing: border-box;
 	text-decoration: none;
 }
 
@@ -65,20 +66,23 @@ a:active,
 a:focus { color: blue }
 a:hover { color: #d00 }
 
+html, body {
+	width: 100%;
+	min-height: 100%;
+}
+
 body {
-	position: relative; /* needed for footer positioning*/
-	margin: 0 auto; /* center, not in IE5 */
-	height: auto !important; /* real browsers */
-	height: 100%; /* IE6: treaded as min-height*/
-	min-height: 100%; /* real browsers */
 	font: 16px arial;
-	background: #eee;
+    background-image: url('background.jpg');
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
 }
 
 b { font-weight: bold }
 i { font-style: italic }
 u { text-decoration: underline }
-h1 { font-size: 32px; font-weight: bold; background: white; text-align: center; padding: 8px 0 }
+h1 { font-size: 32px; font-weight: bold; background: white; text-align: center }
 h2 { font-size: 22px; font-weight: bold; background: white; text-align: center; margin-top: 12px; padding-right: 4px }
 h3 { font-size: 18px; font-weight: bold; background: white; text-align: center; padding: 2px 0 }
 td { text-align: left; vertical-align: top }
@@ -97,17 +101,14 @@ td { text-align: left; vertical-align: top }
 </head>
 <body>
 
-
 <div id="progress"></div>
 
 <a href="javascript:scrollTo(0,0)">
 <div style="position:fixed;top:0;right:0;width:64px;height:64px"></div>
 </a>
 
-<div><img src="sunset.jpg" style="width:100%;height:192px" /></div>
-
 <center>
-<div style="width:183px;margin-top:-144px;text-align:left">
+<div style="width:183px;margin-top:96px;text-align:left">
 
 	<h1>
 		<img src="1.jpg"><img src="2.jpg"><img src="3.jpg">
