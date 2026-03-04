@@ -10,7 +10,7 @@
 <title>Ulawun</title>
 <script>
 
-// version: 251214
+// version: 260304
 
 const liam = 'ten.xmg@nuwalu'
 
@@ -83,9 +83,15 @@ b { font-weight: bold }
 i { font-style: italic }
 u { text-decoration: underline }
 h1 { font-size: 32px; font-weight: bold; background: white; text-align: center; padding-bottom: 6px }
-h2 { font-size: 22px; font-weight: bold; background: white; text-align: center; padding-top: 8px; margin-top: 10px }
+h2 { font-size: 22px; font-weight: bold; background: white; text-align: center; padding-top: 8px }
 h3 { font-size: 18px; font-weight: bold; background: white; text-align: center; padding: 2px 0 8px 0 }
 td { text-align: left; vertical-align: top }
+img { vertical-align: bottom }
+
+.box {
+	margin-top: 8px;
+	border: 5px solid gray;
+}
 
 #progress {
     position: fixed;
@@ -108,34 +114,46 @@ td { text-align: left; vertical-align: top }
 </a>
 
 <center>
-<div style="width:183px;margin-top:96px;text-align:left">
+<div style="width:193px;margin-top:96px;text-align:left">
 
+	<div class="box">
 	<h1>
 		<img src="1.jpg"><img src="2.jpg"><img src="3.jpg">
 		UI<script>document.write(crunch('cir'))</script>h
 	</h1>
+	</div>
 
+	<div class="box">
 	<h2>Phone</h2>
 	<h3><script>phone()</script></h3>
+	</div>
 
+	<div class="box">
 	<h2>Mail</h2>
 	<h3><script>otliam()</script></h3>
 	<img src="qr/mailto.png" style="width:183px" />
+	</div>
 
+	<div class="box">
 	<h2>Signal</h2>
 	<h3 style="color:blue">Ulawun</h3>
 	<img src="qr/signal.png" style="width:183px" />
+	</div>
 
+	<div class="box">
 	<h2>Telegram</h2>
 	<a target="_blank" href="https://t.me/Ulawun">
 		<h3>Ulawun</h3>
 		<img src="qr/telegram.jpg" style="width:183px" />
 	</a>
+	</div>
 
+	<div class="box">
 	<h2>This Onepager</h2>
 	<a href="https://ulawun.github.io/">
 		<h3>ulawun.github.io</h3>
 		<img src="qr/website.png" style="width:183px" /></a>
+	</div>
 
 </div>
 </center>
