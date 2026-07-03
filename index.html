@@ -43,11 +43,7 @@ window.onscroll = function() {
 	var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
 	var scrollPercent = (100 * scrollTop) / scrollHeight
 	document.getElementById("progress").style.width = scrollPercent + "%"
-	if (! scrollTop) {
-		document.getElementById("arrow").style.visibility = "visible";
-	} else {
-		document.getElementById("arrow").style.visibility = "hidden";
-	}
+	document.getElementById("arrow").style.visibility = (! scrollTop) ? "visible" : "hidden";
 }
 
 </script>
