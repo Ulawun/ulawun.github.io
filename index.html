@@ -10,9 +10,10 @@
 <title>Ulawun</title>
 <script>
 
-// version: 260703
+// version: 260704
 
 const liam = 'ten.xmg@nuwalu'
+let scrolledStatus = 0
 
 function crunch(str) {
 	let res = ''
@@ -38,12 +39,35 @@ function phone() {
 	)
 }
 
+function scrollDown() {
+	window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+}
+
+function hideArrowVisibility() {
+	document.getElementById("arrow").style.visibility = 'hidden'
+}
+
+window.addEventListener("load", () => {
+	if (window.location.href.startsWith('file:') && window.location.href.endsWith('.html')) {
+		scrollDown()
+		hideArrowVisibility()
+	} else {
+		window.scrollTo({ top: window.innerHeight / 6, behavior: 'smooth' })
+		setTimeout(() => {
+			scrolledStatus = 1
+		}, 1000)
+	}
+})
+
 window.onscroll = function() {
-	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-	var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-	var scrollPercent = (100 * scrollTop) / scrollHeight
+	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+	const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+	const scrollPercent = (100 * scrollTop) / scrollHeight
 	document.getElementById("progress").style.width = scrollPercent + "%"
-	document.getElementById("arrow").style.visibility = (! scrollTop) ? "visible" : "hidden";
+	if (scrolledStatus === 1) {
+		scrolledStatus = 2
+		hideArrowVisibility()
+	}
 }
 
 </script>
@@ -127,9 +151,9 @@ img { vertical-align: bottom }
 
 <div class="content" style="width:193px;text-align:left;margin:8px">
 
-	<div class="box">
-	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a id="arrow"
-	onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"><span> &uarr;</span></a></h1>
+	<div class="box" onclick="scrollDown()">
+	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a
+		id="arrow"><span> &uarr;</span></a></h1>
 	</div>
 
 	<div class="box">
