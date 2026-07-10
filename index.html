@@ -10,7 +10,7 @@
 <title>Ulawun</title>
 <script>
 
-// version: 260704
+// version: 260710
 
 const liam = 'ten.xmg@nuwalu'
 let scrolledStatus = 0
@@ -47,19 +47,16 @@ function hideArrowVisibility() {
 	document.getElementById("arrow").style.visibility = 'hidden'
 }
 
-window.addEventListener("load", () => {
-	if (window.location.href.startsWith('file:') && window.location.href.endsWith('.html')) {
-		scrollDown()
-		hideArrowVisibility()
-	} else {
-		window.scrollTo({ top: window.innerHeight / 6, behavior: 'smooth' })
-		setTimeout(() => {
-			scrolledStatus = 1
-		}, 1000)
-	}
-})
+function setContentStyle() {
+	// console.log('innerWidth:', window.innerWidth)
+	const element = document.getElementById("content")
+	element.style.margin = "8px auto"
+	if (window.innerWidth > 800) element.style.marginLeft = "7%"
+}
 
-window.onscroll = function() {
+window.onresize = setContentStyle
+
+window.onscroll = () => {
 	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 	const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
 	const scrollPercent = (100 * scrollTop) / scrollHeight
@@ -67,6 +64,20 @@ window.onscroll = function() {
 	if (scrolledStatus === 1) {
 		scrolledStatus = 2
 		hideArrowVisibility()
+	}
+}
+
+window.onload = () => {
+	console.log('onload')
+	setContentStyle()
+	if (window.location.href.startsWith('file:') && window.location.href.endsWith('.htm##l')) {
+		scrollDown()
+		hideArrowVisibility()
+	} else {
+		window.scrollTo({ top: window.innerHeight / 6, behavior: 'smooth' })
+		setTimeout(() => {
+			scrolledStatus = 1
+		}, 1000)
 	}
 }
 
@@ -134,13 +145,15 @@ img { vertical-align: bottom }
     z-index: 1000;
 }
 
+#content {
+	width: 193px;
+	padding-top: calc(100vh - 80px);
+	margin: 8px auto;
+}
+
 .box {
 	margin-top: 8px;
 	border: 5px solid white;
-}
-
-.content {
-	padding-top: calc(100vh - 80px);
 }
 
 </style>
@@ -149,7 +162,7 @@ img { vertical-align: bottom }
 
 <div id="progress"></div>
 
-<div class="content" style="width:193px;text-align:left;margin:8px">
+<div id="content">
 
 	<div class="box" onclick="scrollDown()">
 	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a
