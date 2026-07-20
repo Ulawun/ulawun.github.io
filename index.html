@@ -10,7 +10,7 @@
 <title>Ulawun</title>
 <script>
 
-// version: 260710
+// version: 260720
 
 const liam = 'ten.xmg@nuwalu'
 let scrolledStatus = 0
@@ -47,15 +47,6 @@ function hideArrowVisibility() {
 	document.getElementById("arrow").style.visibility = 'hidden'
 }
 
-function setContentStyle() {
-	// console.log('innerWidth:', window.innerWidth)
-	const element = document.getElementById("content")
-	element.style.margin = "8px auto"
-	if (window.innerWidth > 800) element.style.marginLeft = "7%"
-}
-
-window.onresize = setContentStyle
-
 window.onscroll = () => {
 	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 	const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -69,12 +60,10 @@ window.onscroll = () => {
 
 window.onload = () => {
 	console.log('onload')
-	setContentStyle()
-	if (window.location.href.startsWith('file:') && window.location.href.endsWith('.html')) {
+	if (window.location.href.startsWith('file:##')) {
 		scrollDown()
 		hideArrowVisibility()
 	} else {
-		window.scrollTo({ top: window.innerHeight / 6, behavior: 'smooth' })
 		setTimeout(() => {
 			scrolledStatus = 1
 		}, 1000)
@@ -147,13 +136,30 @@ img { vertical-align: bottom }
 
 #content {
 	width: 193px;
-	padding-top: calc(100vh - 80px);
+	padding-top: calc(100vh - 216px);
 	margin: 8px auto;
+	margin-left: 8%;
 }
 
 .box {
 	margin-top: 8px;
 	border: 5px solid white;
+}
+
+.box-rotated-wrap {
+position: relative;
+height: 193px;
+margin-top: 8px;
+}
+
+.box-rotated {
+position: absolute;
+top: 193px;
+left: 0;
+width: 193px;
+margin-top: 0;
+transform: rotate(-90deg);
+transform-origin: top left;
 }
 
 </style>
@@ -164,9 +170,11 @@ img { vertical-align: bottom }
 
 <div id="content">
 
-	<div class="box" onclick="scrollDown()">
+	<div class="box-rotated-wrap" onclick="scrollDown()">
+	<div class="box box-rotated">
 	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a
-		id="arrow"><span> &uarr;</span></a></h1>
+		id="arrow"><span> &rarr;</span></a></h1>
+	</div>
 	</div>
 
 	<div class="box">
