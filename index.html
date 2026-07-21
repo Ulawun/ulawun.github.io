@@ -10,10 +10,9 @@
 <title>Ulawun</title>
 <script>
 
-// version: 260720
+// version: 260721
 
 const liam = 'ten.xmg@nuwalu'
-let scrolledStatus = 0
 
 function crunch(str) {
 	let res = ''
@@ -43,32 +42,14 @@ function scrollDown() {
 	window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
 }
 
-function hideArrowVisibility() {
-	document.getElementById("arrow").style.visibility = 'hidden'
-}
-
 window.onscroll = () => {
 	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 	const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
 	const scrollPercent = (100 * scrollTop) / scrollHeight
 	document.getElementById("progress").style.width = scrollPercent + "%"
-	if (scrolledStatus === 1) {
-		scrolledStatus = 2
-		hideArrowVisibility()
-	}
 }
 
-window.onload = () => {
-	console.log('onload')
-	if (window.location.href.startsWith('file:##')) {
-		scrollDown()
-		hideArrowVisibility()
-	} else {
-		setTimeout(() => {
-			scrolledStatus = 1
-		}, 1000)
-	}
-}
+// window.onload = scrollDown
 
 </script>
 <style type="text/css">
@@ -172,8 +153,7 @@ transform-origin: top left;
 
 	<div class="box-rotated-wrap" onclick="scrollDown()">
 	<div class="box box-rotated">
-	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a
-		id="arrow"><span> &rarr;</span></a></h1>
+	<h1><span>&nbsp;&nbsp;&nbsp;</span>UI<script>document.write(crunch('cir'))</script>h<a>&nbsp;&rarr;&nbsp;</a></h1>
 	</div>
 	</div>
 
