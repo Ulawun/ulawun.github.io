@@ -10,13 +10,12 @@
 <title>Ulawun</title>
 <script>
 
-// version: 260721
-
+const version = 260721
 const liam = 'ten.xmg@nuwalu'
 
 function crunch(str) {
 let res = ''
-for (var i = str.length-1; i >= 0; i --) {
+for (var i = str.length - 1; i >= 0; i--) {
 res += str.charAt(i)
 }
 return res
@@ -50,6 +49,8 @@ document.getElementById("progress").style.width = scrollPercent + "%"
 }
 
 // window.onload = scrollDown
+
+console.log('version', version)
 
 </script>
 <style type="text/css">
@@ -143,6 +144,7 @@ border: 5px solid white;
 position: relative;
 height: 193px;
 margin-top: 8px;
+cursor: pointer;
 }
 
 .box-rotated {
@@ -160,8 +162,26 @@ display: inline-flex;
 align-items: center;
 justify-content: center;
 width: 1.2em;
+height: 1em;
 flex: 0 0 1.2em;
-line-height: 1;
+cursor: pointer;
+}
+
+.arrow-box::before {
+content: "";
+width: 0.42em;
+height: 0.42em;
+border-top: 0.10em solid blue;
+border-right: 0.10em solid blue;
+transform: rotate(45deg);
+display: block;
+pointer-events: none;
+transition: border-top-color 0.15s ease, border-right-color 0.15s ease;
+}
+
+.arrow-box:hover::before {
+border-top-color: #d00;
+border-right-color: #d00;
 }
 
 </style>
@@ -174,7 +194,7 @@ line-height: 1;
 
 <div class="box-rotated-wrap" onclick="scrollDown()">
 <div class="box box-rotated">
-<h1>&nbsp;UI<script>document.write(crunch('cir'))</script>h&nbsp;<span class="arrow-box" aria-hidden="true"><a>&rarr;</a></span></h1>
+<h1><span>UI<script>document.write(crunch('cir'))</script>h</span><span class="arrow-box" aria-hidden="true"></span></h1>
 </div>
 </div>
 
