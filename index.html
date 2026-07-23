@@ -12,7 +12,7 @@
 <title>Ulawun</title>
 <script>
 
-const version = 260723
+const version = 2607233
 const liam = 'ten.xmg@nuwalu'
 
 function crunch(str) {
@@ -44,20 +44,18 @@ window.addEventListener('scroll', () => {
   if (progress) progress.style.width = scrollPercent + '%'
 })
 
-window.onload = () => {
-  console.log('version', version)
+window.addEventListener('load', () => {
+	console.log('version:', version)
 
-  document.getElementById("version").title = version
+	document.getElementById("version").title = version
 
-  // scrollDown()
+	// scrollDown()
 
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').catch((err) => {
-        console.error('Service-Worker-Registrierung fehlgeschlagen:', err)
-      })
-    })
-  }
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./service-worker.js').catch((err) => {
+			console.error('Service-Worker-Registrierung fehlgeschlagen:', err)
+		})
+	}
 }
 
 </script>
