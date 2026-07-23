@@ -47,6 +47,8 @@ window.addEventListener('scroll', () => {
 window.onload = () => {
   console.log('version', version)
 
+  document.getElementById("version").title = version
+
   // scrollDown()
 
   if ('serviceWorker' in navigator) {
@@ -194,6 +196,7 @@ border-right-color: #d00;
 </head>
 <body>
   <div id="progress"></div>
+  <div id="version" style="position:fixed;top:0;left:0">&nbsp;&nbsp;&nbsp;</div>
   <div id="content">
 
     <div class="box-rotated-wrap" onclick="scrollDown()">
