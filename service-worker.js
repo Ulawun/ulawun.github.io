@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ulawun-offline-v2607233';
+const CACHE_NAME = 'ulawun-offline-v2607234';
 const OFFLINE_URLS = [
   './',
   './index.html',

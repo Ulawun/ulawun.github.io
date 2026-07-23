@@ -12,36 +12,36 @@
 <title>Ulawun</title>
 <script>
 
-const version = 2607233
+const version = 2607234
 const liam = 'ten.xmg@nuwalu'
 
 function crunch(str) {
-  let res = ''
-  for (let i = str.length - 1; i >= 0; i--) res += str.charAt(i)
-  return res
+	let res = ''
+	for (let i = str.length - 1; i >= 0; i--) {
+		res += str.charAt(i)
+	}
+	return res
 }
 
 function otliam() {
-  if (liam !== '') {
-    document.write('<a href="' + crunch('otliam') + ':' + crunch(liam) + '">' + crunch(liam) + '</a>')
-  }
+	document.write('<a href="' + crunch('otliam') + ':' + crunch(liam) + '">' + crunch(liam) + '</a>')
 }
 
 function phone() {
-  const x = '8577305 361 94+'
-  document.write('<a href="tel:' + crunch(x) + '">' + crunch(x) + '</a>')
+	const x = '8577305 361 94+'
+	document.write('<a href="tel:' + crunch(x) + '">' + crunch(x) + '</a>')
 }
 
 function scrollDown() {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+	window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
 }
 
 window.addEventListener('scroll', () => {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-  const scrollPercent = scrollHeight > 0 ? (100 * scrollTop) / scrollHeight : 0
-  const progress = document.getElementById('progress')
-  if (progress) progress.style.width = scrollPercent + '%'
+	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+	const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+	const scrollPercent = scrollHeight > 0 ? (100 * scrollTop) / scrollHeight : 0
+	const progress = document.getElementById('progress')
+	if (progress) progress.style.width = scrollPercent + '%'
 })
 
 window.addEventListener('load', () => {
@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
 			console.error('Service-Worker-Registrierung fehlgeschlagen:', err)
 		})
 	}
-}
+})
 
 </script>
 <style>
