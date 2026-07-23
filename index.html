@@ -12,7 +12,7 @@
 <title>Ulawun</title>
 <script>
 
-const version = 260722
+const version = 260723
 const liam = 'ten.xmg@nuwalu'
 
 function crunch(str) {
@@ -44,9 +44,19 @@ window.addEventListener('scroll', () => {
   if (progress) progress.style.width = scrollPercent + '%'
 })
 
-// window.onload = scrollDown
+window.onload = () => {
+  console.log('version', version)
 
-console.log('version', version)
+  // scrollDown()
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js').catch((err) => {
+        console.error('Service-Worker-Registrierung fehlgeschlagen:', err)
+      })
+    })
+  }
+}
 
 </script>
 <style>
@@ -224,17 +234,7 @@ border-right-color: #d00;
         <img src="./qr/website.png" alt="Website QR-Code" loading="lazy" width="183" height="183">
       </a>
     </div>
+
   </div>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js').catch((err) => {
-          console.error('Service-Worker-Registrierung fehlgeschlagen:', err);
-        });
-      });
-    }
-  </script>
-
 </body>
 </html>
